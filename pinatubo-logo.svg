@@ -1,0 +1,18 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <!-- Background Circle (Optional, for icon usage) -->
+  <circle cx="150" cy="150" r="140" fill="#F4F4F4" />
+  
+  <!-- Mountain Peak (Pinatubo) -->
+  <path d="M150 50 L250 220 H50 Z" fill="#A7B8A8" />
+  
+  <!-- Snow Cap / Stylized Top -->
+  <path d="M150 50 L185 110 L150 90 L115 110 Z" fill="#FFFFFF" opacity="0.8" />
+  
+  <!-- Shadow/Depth on one side -->
+  <path d="M150 50 L150 220 H250 Z" fill="#2F3237" opacity="0.1" />
+  
+  <!-- Text Label (Optional, if used as full logo) -->
+  <!-- 
+  <text x="150" y="260" font-family="Montserrat, sans-serif" font-size="24" font-weight="bold" fill="#2F3237" text-anchor="middle">PINATUBO</text>
+  -->
+</svg>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Book an appointment with Pinatubo Consultancy - In-person in Paris or online consultation.">
+    <title>Book Appointment - Pinatubo Consultancy</title>
+    <link rel="icon" type="image/svg+xml" href="pinatubo-logo.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .payment-form input {
+            width: 100%;
+            padding: 0.875rem;
+            margin-bottom: var(--spacing-sm);
+            border: 2px solid #e0e0e0;
+            border-radius: var(--radius-small);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .payment-form input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .radio-option {
+            flex: 1;
+            padding: var(--spacing-md);
+            border: 3px solid #e0e0e0;
+            border-radius: var(--radius-default);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            text-align: center;
+        }
+
+        .radio-option:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .radio-option input[type="radio"]:checked+label {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .radio-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .radio-option label {
+            cursor: pointer;
+            display: block;
+        }
+
+        .alert-success {
+            background-color: #4CAF50;
+            color: white;
+            padding: var(--spacing-md);
+            border-radius: var(--radius-default);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--radius-small);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="pinatubo-logo.jpg" alt="Pinatubo Consultancy Logo">
+                </a>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#!">Services <i class="fas fa-chevron-down"
+                            style="font-size: 0.75rem; margin-left: 0.25rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="services/education.html"><i class="fas fa-graduation-cap"></i> Education & Students</a>
+                        <a href="services/business.html"><i class="fas fa-briefcase"></i> Business &
+                            Entrepreneurship</a>
+                        <a href="services/residency.html"><i class="fas fa-passport"></i> Residency & Visas</a>
+                        <a href="services/social.html"><i class="fas fa-hand-holding-heart"></i> Social Assistance</a>
+                        <a href="services/legal.html"><i class="fas fa-gavel"></i> Legal & Translation</a>
+                    </div>
+                </li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="booking.html" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Book Now</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="hero" style="height: 50vh; min-height: 400px;">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80" alt="Calendar and planning"
+            class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Book Your Appointment</h1>
+            <p>Choose between in-person consultations in Paris or online meetings</p>
+        </div>
+    </section>
+
+    <!-- BOOKING CONTENT -->
+    <section style="background-color: var(--color-light-grey);">
+        <div class="container" style="max-width: 900px;">
+
+            <!-- STEP 1: LOCATION SELECTION -->
+            <div class="glass-card">
+                <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Where are you located?</h2>
+
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" name="location" id="location-paris" value="paris">
+                        <label for="location-paris">
+                            <i class="fas fa-building"
+                                style="font-size: 2.5rem; color: var(--color-primary); display: block; margin-bottom: var(--spacing-sm);"></i>
+                            <h3>In Paris</h3>
+                            <p style="margin: 0; color: #666;">In-Person Appointment</p>
+                            <small>48€ payment required<br>to secure your slot</small>
+                        </label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" name="location" id="location-international" value="international">
+                        <label for="location-international">
+                            <i class="fas fa-globe"
+                                style="font-size: 2.5rem; color: var(--color-primary); display: block; margin-bottom: var(--spacing-sm);"></i>
+                            <h3>Outside Paris / International</h3>
+                            <p style="margin: 0; color: #666;">Online Appointment</p>
+                            <small>48€ payment required<br>to secure your slot</small>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: BOOKING FORM (Unified) -->
+            <div id="booking-details-section" class="glass-card hidden" style="margin-top: var(--spacing-lg);">
+                <h2 id="booking-title"><i class="fas fa-calendar-alt"></i> Complete Your Booking</h2>
+                <p id="booking-instructions" style="color: #666; margin-bottom: var(--spacing-lg);">Please fill in your
+                    details below.</p>
+
+                <form id="booking-form">
+                    <!-- Service & Time Selection -->
+                    <div class="grid grid-2">
+                        <div>
+                            <label for="booking-service"><strong>Service Type *</strong></label>
+                            <select id="booking-service" class="form-input" required>
+                                <option value="">Select a service...</option>
+                                <option value="education">Education & Students</option>
+                                <option value="business">Business & Entrepreneurship</option>
+                                <option value="residency">Residency & Visas</option>
+                                <option value="social">Social Assistance</option>
+                                <option value="legal">Legal & Translation</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="booking-date"><strong>Date *</strong></label>
+                            <input type="date" id="booking-date" class="form-input" required>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2" style="margin-top: var(--spacing-sm);">
+                        <div>
+                            <label for="booking-time"><strong>Time *</strong></label>
+                            <select id="booking-time" class="form-input" required>
+                                <option value="">Select time...</option>
+                                <option value="09:00">09:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="14:00">02:00 PM</option>
+                                <option value="15:00">03:00 PM</option>
+                                <option value="16:00">04:00 PM</option>
+                                <option value="17:00">05:00 PM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="booking-phone"><strong>Phone *</strong></label>
+                            <input type="tel" id="booking-phone" placeholder="+33 6 12 34 56 78" class="form-input"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- Personal Details -->
+                    <div class="grid grid-2" style="margin-top: var(--spacing-sm);">
+                        <div>
+                            <label for="booking-name"><strong>Full Name *</strong></label>
+                            <input type="text" id="booking-name" placeholder="John Doe" class="form-input" required>
+                        </div>
+                        <div>
+                            <label for="booking-email"><strong>Email *</strong></label>
+                            <input type="email" id="booking-email" placeholder="john@example.com" class="form-input"
+                                required>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: var(--spacing-sm);">
+                        <label for="booking-notes"><strong>Additional Notes (Optional)</strong></label>
+                        <textarea id="booking-notes" rows="3" placeholder="Any specific questions?"
+                            class="form-input"></textarea>
+                    </div>
+
+                    <!-- PAYMENT FIELDS (Hidden by default, shown for both options) -->
+                    <div id="payment-fields-container" class="hidden"
+                        style="margin-top: var(--spacing-lg); padding-top: var(--spacing-md); border-top: 1px solid #e0e0e0;">
+                        <h3 style="margin-bottom: var(--spacing-md); color: var(--color-primary);"><i
+                                class="fas fa-credit-card"></i> Payment Details (48€)</h3>
+                        <div class="payment-form">
+                            <label for="card-number"><strong>Card Number *</strong></label>
+                            <input type="text" id="card-number" placeholder="4242 4242 4242 4242" maxlength="19"
+                                class="form-input">
+
+                            <div class="grid grid-2">
+                                <div>
+                                    <label for="card-expiry"><strong>Expiry *</strong></label>
+                                    <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5"
+                                        class="form-input">
+                                </div>
+                                <div>
+                                    <label for="card-cvc"><strong>CVC *</strong></label>
+                                    <input type="text" id="card-cvc" placeholder="123" maxlength="3" class="form-input">
+                                </div>
+                            </div>
+                            <label for="card-holder"><strong>Cardholder Name *</strong></label>
+                            <input type="text" id="card-holder" placeholder="Name on card" class="form-input">
+
+                            <!-- Demo Mode Notice -->
+                            <div
+                                style="margin-top: var(--spacing-sm); padding: var(--spacing-xs); background: rgba(167, 184, 168, 0.1); border-radius: var(--radius-small); text-align: center;">
+                                <small><strong>Demo Mode:</strong> <a href="#!" id="use-test-card">Click to fill test
+                                        card</a></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-booking-btn" class="btn btn-primary btn-large"
+                        style="width: 100%; margin-top: var(--spacing-md);">
+                        <i class="fas fa-check"></i> Confirm Booking
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT INFO -->
+    <section>
+        <div class="container text-center">
+            <h2>Contact Information</h2>
+            <div class="grid grid-3" style="margin-top: var(--spacing-lg);">
+                <div class="glass-card">
+                    <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--color-primary);"></i>
+                    <h4 style="margin-top: var(--spacing-sm);">Office Address</h4>
+                    <p>98 Boulevard du Montparnasse<br>75014 Paris, France</p>
+                </div>
+
+                <div class="glass-card">
+                    <i class="fas fa-phone" style="font-size: 2rem; color: var(--color-primary);"></i>
+                    <h4 style="margin-top: var(--spacing-sm);">Phone</h4>
+                    <p><a href="tel:+33616451430">06 16 45 14 30</a></p>
+                </div>
+
+                <div class="glass-card">
+                    <i class="fas fa-envelope" style="font-size: 2rem; color: var(--color-primary);"></i>
+                    <h4 style="margin-top: var(--spacing-sm);">Email</h4>
+                    <p><a href="mailto:contact@savoirvivre.fr">contact@savoirvivre.fr</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Pinatubo Consultancy</h4>
+                    <p>Expert administrative and legal guidance in France.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="booking.html">Book Appointment</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services/education.html">Education & Students</a></li>
+                        <li><a href="services/business.html">Business & Entrepreneurship</a></li>
+                        <li><a href="services/residency.html">Residency & Visas</a></li>
+                        <li><a href="services/social.html">Social Assistance</a></li>
+                        <li><a href="services/legal.html">Legal & Translation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 98 Boulevard du Montparnasse<br>75014 Paris, France</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+33616451430">06 16 45 14 30</a></p>
+                    <p><i class="fas fa-envelope"></i> <a
+                            href="mailto:contact@savoirvivre.fr">contact@savoirvivre.fr</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pinatubo Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP WIDGET -->
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/33616451430" target="_blank" class="whatsapp-btn" aria-label="Contact us on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- MOBILE STICKY BUTTON -->
+    <div class="mobile-sticky-btn">
+        <a href="booking.html" class="btn btn-primary">Book Appointment</a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking-logic.js"></script>
+</body>
+
+</html>
