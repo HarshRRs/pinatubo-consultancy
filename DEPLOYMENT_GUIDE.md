@@ -141,7 +141,7 @@ Make sure these are YOUR real details:
 
 **What to update:**
 - Phone number: Currently `06 16 45 14 30`
-- Email: Currently `contact@savoirvivre.fr`
+- Email: Currently `pinatubofr@gmail.com`
 - Address: Currently `98 Boulevard du Montparnasse, 75014 Paris`
 - WhatsApp number in the widget
 
